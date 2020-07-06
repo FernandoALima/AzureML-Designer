@@ -57,6 +57,26 @@ ___
 
 5. Agora é hora de fazer o upload dos dados que você irá utilizar no seu experimentos.
 
-Eu utilizei o Kaggle (https://www.kaggle.com/vjchoudhary7/hr-analytics-case-study) para baixar um dataset para esse experimento. No meu caso eu dei uma "abrasileirada" no dataset e o mesmo está disponível nesse link: 
+Eu utilizei o Kaggle (https://www.kaggle.com/vjchoudhary7/hr-analytics-case-study) para baixar um dataset para esse experimento. No meu caso eu dei uma "abrasileirada" no dataset e o mesmo está disponível neste repositório do GitHub. Basta fazer o download do arquivo para depois fazer o upload para o seu Storage Account Container conforme imagem abaixo?
 
--
+![img7](/img/upload_data.png)
+___
+
+## Começando nossos experimentos no Azure Machine Learning Workspace ##
+
+> 1. Volte ao seu resource group e click em Machine Learning
+
+![img8](/img/marchinelearningclick.png)
+
+Uma vez dentro do recurso click em **"Launch now"**
+
+![img9](/img/ml_launch.png)
+___
+
+> 2. Agora você já está dentro do Azure Machine Learning Studio
+
+Click em **"Designer (preview)"** e então click no sinal de + conforme imagens abaixo:
+
+![img10](/img/ml_designer01.png)
+
+![img11](/img/ml_designer02.png)
