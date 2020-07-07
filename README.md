@@ -87,7 +87,7 @@ Uma vez dentro do recurso click em **"Launch now"**
 ___
 
 
-## Começando nossos experimentos no Azure Machine Learning Workspace ##
+## Começando nossos experimentos no Azure Machine Learning Studio ##
 
 > 1. Agora você já está dentro do Azure Machine Learning Studio
 
@@ -102,7 +102,7 @@ ___
 
 - Primeiro vamos dar um nome e uma descrição para esse pipeline. Do seu lado direito em **"Draft details"** digite um nome e uma descrição para seu experimento
 
-![img15](/img/ml_designer02.png)
+![img15](/img/ml_designername.png)
 
 - Agora precisamos selecionar o **"Compute target"** esses servidores que irão precessar todas as etapas do nosso workflow
 
