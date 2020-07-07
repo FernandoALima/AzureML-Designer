@@ -163,19 +163,40 @@ ___
         - Digite uma descrição para seu experimento
         - Click em **"Submit"**
 
-        ![img23](/img/run_experimento01.png)
-    
-    run_experimento01
+        ![img24](/img/run_experimento01.png)
+___    
 
-    
-
-
-
-> 4. Selecionar as colunas ou Features
+> 4. Selecionar as colunas ou features
 
 - Na coluna **"Modules"** ao lado esquedo click em **"Data Transformation"** selecione **"Select Columns in Dataset"** e arraste para o centro da tela no campo vazio.
+
+- Conecte a caixa **"Import Data"** com a caixa **"Select Columns in Dataset"**
 
 - Após a etapa anterior irá aparecer uma coluna **"Select Columns in Dataset"** a sua direita. Click em **"Edit Column"**
 
     - Selecione **"All columns"** e click no sinal +
     - Selecione **"Exclude"** e aqui você pode selecionar as colunas que você quer excluir do seu experimento utilizando o **"Column names"** 
+
+    ![img25](/img/select_columns.png)
+___  
+
+> 5. Limpar linhas que estão sem dados
+
+- Na coluna **"Modules"** ao lado esquedo click em **"Data Transformation"** selecione **"Clean Missing Data"** e arraste para o centro da tela no campo vazio.
+
+- Conecte a caixa **"Select Columns in Dataset"** com a caixa **"Clean Missing Data"**
+
+- Após a etapa anterior irá aparecer uma coluna **"Clean Missing Data"** a sua direita. Click em **"Edit Column"**
+
+    - Selecione **"All columns"**
+    - Click em **"Save"**
+    - Minimum missing value ratio pode deixar em **"0.0"**
+    - Maximum missing value ratio pode deixar em **"1.0"**
+    - Em Cleaning mode selecionar **"Remove entire row"**
+
+    ![img26](/img/clean_missingdata01.png)
+
+    ![img26](/img/clean_missingdata02.png)
+
+    
+
