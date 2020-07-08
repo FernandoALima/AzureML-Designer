@@ -126,7 +126,7 @@ ___
 
 > 3. Importar os dados
 
- - Primeiro passo é importar os dados que serão utilizados para esse experimento. Na coluna **"Modules"** ao lado esquedo click em **"Data Input and Output"** selecione **"Import Data"** e arraste para o centro da tela no campo vazio.
+ - Primeiro passo é importar os dados que serão utilizados para esse experimento. Na coluna **"Modules"** ao lado esquerdo click em **"Data Input and Output"** selecione **"Import Data"** e arraste para o centro da tela no campo vazio.
 
 ![img20](/img/ml_designer07.png)
 
@@ -168,7 +168,7 @@ ___
 
 > 4. Selecionar as colunas ou features
 
-- Na coluna **"Modules"** ao lado esquedo click em **"Data Transformation"** selecione **"Select Columns in Dataset"** e arraste para o centro da tela no campo vazio.
+- Na coluna **"Modules"** ao lado esquerdo click em **"Data Transformation"** selecione **"Select Columns in Dataset"** e arraste para o centro da tela no campo vazio.
 
 - Conecte a caixa **"Import Data"** com a caixa **"Select Columns in Dataset"**
 
@@ -182,7 +182,7 @@ ___
 
 > 5. Limpar linhas que estão sem dados
 
-- Na coluna **"Modules"** ao lado esquedo click em **"Data Transformation"** selecione **"Clean Missing Data"** e arraste para o centro da tela no campo vazio.
+- Na coluna **"Modules"** ao lado esquerdo click em **"Data Transformation"** selecione **"Clean Missing Data"** e arraste para o centro da tela no campo vazio.
 
 - Conecte a caixa **"Select Columns in Dataset"** com a caixa **"Clean Missing Data"**
 
@@ -196,7 +196,134 @@ ___
 
     ![img26](/img/clean_missingdata01.png)
 
-    ![img26](/img/clean_missingdata02.png)
-
+    ![img27](/img/clean_missingdata02.png)
+___ 
     
+> 6. Agora é hora de dividir os dados para treinamento e validação
+
+- Na coluna **"Modules"** ao lado esquerdo click em **"Data Transformation"** selecione **"Split Data"** e arraste para o centro da tela no campo vazio.
+
+- Conecte a caixa **"Clean Missing Data"** com a caixa **"Split Data"**. Obs: Na caixa **"Clean Missing Data"** existem duas saídas e neste caso você deve utilizar a saída da esquerda porque essa saída é a que contém os dados já transformados.
+
+- Após a etapa anterior irá aparecer uma coluna **"Split Data"** a sua direita. Preencha os campos conforme detalhado abaixo:
+
+    - Deixe selecionado **"Split Rows"**
+    - No campo **"Fraction of rows in the first output dataset"** mude para **"0.7"** (com isto 70% das linhas serão utilizadas para treinamento e o restando 30% para validação do modelo)
+    - No campo **"Random seed"** pode deixar em **"0"**
+    - No campo **"Stratified split** selecione **"False"**
+        
+    ![img28](/img/splitdata01.png)
+___ 
+
+> 7. Vamos treinar o modelo agora
+
+- Na coluna **"Modules"** ao lado esquerdo click em **"Model Training"** selecione **"Train Model"** e arraste para o centro da tela no campo vazio.
+
+- Conecte a caixa **"Split Data"** com a caixa **"Train Model"**. Obs: Na caixa **"Split Data"** existem duas saídas e neste caso você deve utilizar a saída da esquerda, pois ela contém os 70% das linhas do nosso dataset que será utilizado no trainamento.
+
+- Após a etapa anterior irá aparecer uma coluna **"Train Model"** a sua direita. Preencha os campos conforme detalhado abaixo:
+
+    - Click em **"Edit column"**
+    - No campo **"Select a single column"** selecione **"Column names"** e digite **'Saiu_da_empresa'** (Essa e sua coluna target, ou seja você irá treinar seu modelo para responder se uma pessoa vai sair da empresa ou não)
+    - Click em **"Save"**
+            
+    ![img29](/img/trainmodel01.png)
+
+    ![img30](/img/trainmodel02.png)
+___ 
+
+> 8. Agora vamos escolher qual algoritmo de Machine Learning iremos utilizar
+
+- Na coluna **"Modules"** ao lado esquerdo click em **"Machine Learning Algorithms"** selecione **"MultiClass Boosted Decision Tree"** e arraste para o centro da tela no campo vazio. Obs: Como esse é um problema de classificação (sim ou não, groupo a ou grupo b) temos que utilizar algoritmos de Classificação.
+
+- Conecte a caixa **"MultiClass Boosted Decision Tree"** com a caixa **"Train Model"**. 
+
+- Após a etapa anterior irá aparecer uma coluna **"MultiClass Boosted Decision Tree"** a sua direita. Deixe os campos preenchidos do padrão conforme imagem abaixo:
+
+![img31](/img/algoritmoml01.png)
+___ 
+
+> 9. Agora nesta etapa vamos dar uma pontuação para nosso modelo após o treino
+
+- Na coluna **"Modules"** ao lado esquerdo click em **"Model Scoring & Evaluation"** selecione **"Score Model"** e arraste para o centro da tela no campo vazio.
+
+- Conecte a caixa **"Train Model"** com a caixa **"Score Model"**. Aqui você também precisa conectar a caixa **"Split Data"** com a caixa **"Score Model"**. Obs: Para fazer a pontuação vamos utilizar o resultado do trainamento do modelo e validar com os 30% das linhas restantes do dataset.
+
+![img32](/img/scoremodel01.png)
+___ 
+
+> 10. E finalmente iremos avaliar nosso modelo
+
+- Na coluna **"Modules"** ao lado esquerdo click em **"Model Scoring & Evaluation"** selecione **"Evaluate Model"** e arraste para o centro da tela no campo vazio.
+
+- Conecte a caixa **"Score Model"** com a caixa **"Evaluate Model"**. 
+
+![img33](/img/evaluatemodel01.png)
+
+- Em seguida click em **"Submit"**
+    
+    - No pop-up com o nome de **"Set up pipeline run"**
+    - Selecione **"Select existing"**
+    - Selecione o nome do seu experimento
+    - Click em **"Submit"**
+
+    ![img34](/img/run_experimento02.png)
+    ___ 
+
+> 11. Verificar o resultado do seu experimento
+
+- Click na caixa **"Evaluate Model"**. Em seguida click em **"Outputs + logs"**, depois click o sinal de um gráfico de barras.
+
+![img35](/img/resultado01.png)
+
+- Você pode clicar em cada caixa e em seguida click em **"Outputs + logs"** para verificar o resultado após a execução.
+
+![img36](/img/resultado02.png)
+___ 
+
+> 12. Vamos melhorar nosso modelo agora
+
+- Click com botão da direita do mouse sobre a caixa **"MultiClass Boosted Decision Tree"** e depois click em **"Delete"**
+
+- Na coluna **"Modules"** ao lado esquerdo click em **"Machine Learning Algorithms"** selecione **"Multiclass Decision Forest"** e arraste para o centro da tela no campo vazio.
+
+- Conecte a caixa **"Multiclass Decision Forest"** com a caixa **"Train Model"**. 
+
+- Após a etapa anterior irá aparecer uma coluna **"Multiclass Decision Forest"** a sua direita. Deixe os campos preenchidos do padrão conforme imagem abaixo:
+
+![img37](/img/algoritmoml02.png)
+
+- Em seguida click em **"Submit"**
+    
+    - No pop-up com o nome de **"Set up pipeline run"**
+    - Selecione **"Select existing"**
+    - Selecione o nome do seu experimento
+    - Click em **"Submit"**
+
+    ![img34](/img/run_experimento02.png)
+    ___ 
+
+> 12. Verificar o resultado novamente
+
+- Click na caixa **"Evaluate Model"**. Em seguida click em **"Details"**. 
+
+![img35](/img/resultado03.png)
+
+- Como podemos ver dessa vez atingimos um acurácia de 0.96% o que já está ótimo para nosso experimento
+___ 
+
+> 13. Agora vamos criar um endpoint para podermos consumir nosso modelo 
+
+- Click em **"Create inference pipeline"** e em seguida selecione **"Real-time inference pipeline"**
+
+![img36](/img/deploymodel01.png)
+
+- Click em **"Submit"**
+
+![img36](/img/deploymodel02.png)
+
+- No pop-up com o nome de **"Set up pipeline run"**
+    - Selecione **"Select existing"**
+    - Selecione o nome do seu experimento
+    - Click em **"Submit"**
 
