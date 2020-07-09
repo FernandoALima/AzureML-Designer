@@ -164,7 +164,15 @@ ___
         - Click em **"Submit"**
 
         ![img24](/img/run_experimento01.png)
-___    
+
+        - Após a execução click na caixa **'Import Data'** e em seguida em **'Preview schema'**
+
+        ![img25](/img/importdata01.png)
+
+        - Tenha certeza que as colunas estão configuradas corretas com **'Interger'** para palavras e **'Integer'** para números
+
+        ![img26](/img/importdata02.png)
+        ___    
 
 > 4. Selecionar as colunas ou features
 
@@ -177,7 +185,7 @@ ___
     - Selecione **"All columns"** e click no sinal +
     - Selecione **"Exclude"** e aqui você pode selecionar as colunas que você quer excluir do seu experimento utilizando o **"Column names"** 
 
-    ![img25](/img/select_columns.png)
+    ![img27](/img/select_columns.png)
 ___  
 
 > 5. Limpar linhas que estão sem dados
@@ -194,9 +202,9 @@ ___
     - Maximum missing value ratio pode deixar em **"1.0"**
     - Em Cleaning mode selecionar **"Remove entire row"**
 
-    ![img26](/img/clean_missingdata01.png)
+    ![img28](/img/clean_missingdata01.png)
 
-    ![img27](/img/clean_missingdata02.png)
+    ![img29](/img/clean_missingdata02.png)
 ___ 
     
 > 6. Agora é hora de dividir os dados para treinamento e validação
@@ -314,16 +322,151 @@ ___
 
 > 13. Agora vamos criar um endpoint para podermos consumir nosso modelo 
 
+- No menu a esquerda click em **"Compute"**
+- Sem seguida em **"Inference Cluster"**
+- Depois em **"Create"**
+
+![img36](/img/clusterinf01.png)
+
+- No pop-up com o nome de **"New inference cluster"**
+    - Digite um nome para o seu cluster
+    - Selecione **"Create new"**
+    - Selecione uma região. (Recomento utilizar East US 2/ Leste dos EUA 2 por questões de custo)
+    - Selecione um tamanho de VM. (Deixe o padrão recomendado **'Standard_D3_v2'**)
+    - Selecione **"Production"**
+    - Defina um número de nós para o cluster. Para esse experimento deixe o padrão **"3"**
+    - Em "Network Configuration" selecione **"Basic"**
+    - Click em **"Create"**
+
+    ![img37](/img/clusterinf02.png)
+
+    - Assim que terminar volte para seu experimento 
+
+    ![img38](/img/clusterinf02.png)
+
 - Click em **"Create inference pipeline"** e em seguida selecione **"Real-time inference pipeline"**
 
-![img36](/img/deploymodel01.png)
+![img39](/img/voltaexp.png)
 
 - Click em **"Submit"**
 
-![img36](/img/deploymodel02.png)
+![img40](/img/deploymodel02.png)
 
-- No pop-up com o nome de **"Set up pipeline run"**
+<!-- No pop-up com o nome de **"Set up pipeline run"**
     - Selecione **"Select existing"**
     - Selecione o nome do seu experimento
-    - Click em **"Submit"**
+    - Click em **"Submit"**-->
 
+- Após finalizar click em **"Deploy"**
+
+![img41](/img/deploymodel03.png)
+
+- No pop-up com o nome de **"Set up real-time endpoint"**
+    - Selecione **"Deploy new real-time endpoint"**
+    - No campo **"Real-time endpoint name"** digite um nome para seu endpoint
+    - No campo **"Endpoint description"** digite uma descrição para seu endpoint. Obs: Esse campo é opcional
+    - No campo **"Compute target"** Selecione o cluster que você criou
+    - Click em **"Deploy"**
+
+    ![img42](/img/deploymodel04.png)
+
+    ![img43](/img/deploymodel05.png)
+
+- Após concluir volte ao Designer e click em **"Publish"**
+
+- No pop-up com o nome de **"Set up published pipeline"**
+    - Selecione **"Create new"**
+    - No campo **"New PipelineEndpoint name"** digite um nome 
+    - No campo **"PipelineEndpoint description"** digite uma descrição. Obs: Esse campo é opcional
+    - Deixe marcada as opções **"Set as default pipeline for this endpoint"** e **"Continue on failure step"**
+    - Click em **"Publish"**
+
+    ![img44](/img/deploymodel07.png)
+    ![img45](/img/consume01.png)
+___ 
+
+> 14. Agora é hora de consumir nosso modelo
+
+- Click em **"Endpoints"**
+
+![img45](/img/consume02.png)
+
+- Click no seu **"Real-time endpoints"**
+
+![img46](/img/consume03.png)
+
+- Click na aba **"Test"** e em seguida no botão **"Test"**
+
+![img47](/img/consume03.png)
+
+- Pronto testamos nosso experimento com um retorno bem satisfatório.
+___ 
+
+## Agora vamos consumir nosso modelo no PBI ##
+
+> 1. Primeiro passo é baixar o Power BI Desktop
+
+- Baixe pelo link: https://www.microsoft.com/pt-br/download/details.aspx?id=58494
+
+- Instale o Power BI seguindo as opções default. Após a instalação abra o mesmo
+
+![img47](/img/pbi01.png) 
+___ 
+
+> 2. Agora vamos importar uma amostra para o Power BI
+
+- Click no icone **"Excel"**
+
+![img48](/img/pbi02.png) 
+
+- Selecione **"Sheet1"** e depois click em **"Load"**
+
+![img49](/img/pbi03.png)
+___ 
+
+> 3. Vamos habilitar as features em preview do Power BI
+
+- Click em **"File"**, depois click em **"Options and settings"** e em seguida **"Options"**
+
+![img50](/img/pbi04.png)
+
+![img51](/img/pbi05.png)
+
+- Click em **"Previews features"**, depois click na caixa **"AI Insights function browser"** 
+
+![img52](/img/pbi06.png)
+___ 
+
+> 4. Agora vamos consumir nosso modelo
+
+- Click no icone **"Transform data"**, depois click em **"Transform data"** 
+
+![img53](/img/pbi07.png)
+
+- Agora no Power Query Editor você conseguirá visualizar os dados da amostra
+
+- Click no **"Azure Machine Learning"**, depois click em **"Sign in"**
+
+- Agora você precisa logar com suas credenciais do Azure. Após fazer o login basta clicar em **"Connect"**
+
+![img54](/img/pbi08.png)
+
+- Agora dentro do Azure Machine Learning Models, você deve selecionar o seu endpoint criado anteriormente
+
+![img55](/img/pbi11.png)
+
+- Nos campos sem dados você deve colocar um exemplo. Neste caso seria um número (1 por exemplo) conforme imagem abaixo:
+
+![img56](/img/pbi11.png)
+
+- Em seguida é só clicar em **"OK"**
+
+- Irá aparecer uma mensagem sobre Privacidade. Neste momento click em **"Continue"**
+
+![img57](/img/pbi12.png)
+
+- Em **"Privacy levels"** marque a opção **"Ignore Privacy Levels checks..."** e click em **"Save"**
+
+![img58](/img/pbi13.png)
+
+- Em **"Privacy levels"** marque a opção **"Ignore Privacy Levels checks..."** e click em **"Save"**
