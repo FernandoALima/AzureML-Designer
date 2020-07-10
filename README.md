@@ -169,7 +169,7 @@ ___
 
         ![img25](/img/importdata01.png)
 
-        - Tenha certeza que as colunas estão configuradas corretas com **'Interger'** para palavras e **'Integer'** para números
+        - Tenha certeza que as colunas estão configuradas corretas com **'Interger'** para colunas que contêm palavras e **'Integer'** para as colunas que contêm números
 
         ![img26](/img/importdata02.png)
         ___    
@@ -455,9 +455,11 @@ ___
 
 ![img55](/img/pbi11.png)
 
-- Nos campos sem dados você deve colocar um exemplo. Neste caso seria um número (1 por exemplo) conforme imagem abaixo:
+- Nos campos sem dados você deve colocar um exemplo. Neste caso seria "Sim" no campo **"Saiu_da_empresa"** e no campo **"Num_empresas_trabalhou"** digite um número, no meu caso usei o "4"
 
 ![img56](/img/pbi11.png)
+
+![img57](/img/pbi11-2.png)
 
 - Em seguida é só clicar em **"OK"**
 
