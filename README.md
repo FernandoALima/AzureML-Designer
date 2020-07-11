@@ -1,11 +1,11 @@
 # Workshop Azure Machine Learning Designer 
 Este workshop contém instruções sobre como criar seu primeiro experimento utilizando o Azure Machine Learning Designer
 
-## Praparar o ambiente ##
+## Preparar o ambiente ##
 
 > 1. Crie sua conta gratuita no Azure
 
-Basta seguir o passo a passo do link abaixo. Obs: Utilize um email para criar sua conta Microsoft que nunca tenha utilizado para trial do Azure anteriormente.
+Basta seguir o passo a passo do link abaixo. Obs.: Utilize um email para criar sua conta Microsoft que nunca tenha utilizado para trial do Azure anteriormente.
 Link: https://azure.microsoft.com/pt-br/free/
 ___
    
@@ -211,7 +211,7 @@ ___
 
 - Na coluna **"Modules"** ao lado esquerdo click em **"Data Transformation"** selecione **"Split Data"** e arraste para o centro da tela no campo vazio.
 
-- Conecte a caixa **"Clean Missing Data"** com a caixa **"Split Data"**. Obs: Na caixa **"Clean Missing Data"** existem duas saídas e neste caso você deve utilizar a saída da esquerda porque essa saída é a que contém os dados já transformados.
+- Conecte a caixa **"Clean Missing Data"** com a caixa **"Split Data"**. Obs.: Na caixa **"Clean Missing Data"** existem duas saídas e neste caso você deve utilizar a saída da esquerda porque essa saída é a que contém os dados já transformados.
 
 - Após a etapa anterior irá aparecer uma coluna **"Split Data"** a sua direita. Preencha os campos conforme detalhado abaixo:
 
@@ -220,14 +220,14 @@ ___
     - No campo **"Random seed"** pode deixar em **"0"**
     - No campo **"Stratified split** selecione **"False"**
         
-    ![img28](/img/splitdata01.png)
+    ![img30](/img/splitdata01.png)
 ___ 
 
 > 7. Vamos treinar o modelo agora
 
 - Na coluna **"Modules"** ao lado esquerdo click em **"Model Training"** selecione **"Train Model"** e arraste para o centro da tela no campo vazio.
 
-- Conecte a caixa **"Split Data"** com a caixa **"Train Model"**. Obs: Na caixa **"Split Data"** existem duas saídas e neste caso você deve utilizar a saída da esquerda, pois ela contém os 70% das linhas do nosso dataset que será utilizado no trainamento.
+- Conecte a caixa **"Split Data"** com a caixa **"Train Model"**. Obs.: Na caixa **"Split Data"** existem duas saídas e neste caso você deve utilizar a saída da esquerda, pois ela contém os 70% das linhas do nosso dataset que será utilizado no trainamento.
 
 - Após a etapa anterior irá aparecer uma coluna **"Train Model"** a sua direita. Preencha os campos conforme detalhado abaixo:
 
@@ -235,29 +235,29 @@ ___
     - No campo **"Select a single column"** selecione **"Column names"** e digite **'Saiu_da_empresa'** (Essa e sua coluna target, ou seja você irá treinar seu modelo para responder se uma pessoa vai sair da empresa ou não)
     - Click em **"Save"**
             
-    ![img29](/img/trainmodel01.png)
+    ![img31](/img/trainmodel01.png)
 
-    ![img30](/img/trainmodel02.png)
+    ![img32](/img/trainmodel02.png)
 ___ 
 
 > 8. Agora vamos escolher qual algoritmo de Machine Learning iremos utilizar
 
-- Na coluna **"Modules"** ao lado esquerdo click em **"Machine Learning Algorithms"** selecione **"MultiClass Boosted Decision Tree"** e arraste para o centro da tela no campo vazio. Obs: Como esse é um problema de classificação (sim ou não, groupo a ou grupo b) temos que utilizar algoritmos de Classificação.
+- Na coluna **"Modules"** ao lado esquerdo click em **"Machine Learning Algorithms"** selecione **"MultiClass Boosted Decision Tree"** e arraste para o centro da tela no campo vazio. Obs.: Como esse é um problema de classificação (sim ou não, groupo a ou grupo b) temos que utilizar algoritmos de Classificação.
 
 - Conecte a caixa **"MultiClass Boosted Decision Tree"** com a caixa **"Train Model"**. 
 
 - Após a etapa anterior irá aparecer uma coluna **"MultiClass Boosted Decision Tree"** a sua direita. Deixe os campos preenchidos do padrão conforme imagem abaixo:
 
-![img31](/img/algoritmoml01.png)
+![img33](/img/algoritmoml01.png)
 ___ 
 
 > 9. Agora nesta etapa vamos dar uma pontuação para nosso modelo após o treino
 
 - Na coluna **"Modules"** ao lado esquerdo click em **"Model Scoring & Evaluation"** selecione **"Score Model"** e arraste para o centro da tela no campo vazio.
 
-- Conecte a caixa **"Train Model"** com a caixa **"Score Model"**. Aqui você também precisa conectar a caixa **"Split Data"** com a caixa **"Score Model"**. Obs: Para fazer a pontuação vamos utilizar o resultado do trainamento do modelo e validar com os 30% das linhas restantes do dataset.
+- Conecte a caixa **"Train Model"** com a caixa **"Score Model"**. Aqui você também precisa conectar a caixa **"Split Data"** com a caixa **"Score Model"**. Obs.: Para fazer a pontuação vamos utilizar o resultado do trainamento do modelo e validar com os 30% das linhas restantes do dataset.
 
-![img32](/img/scoremodel01.png)
+![img34](/img/scoremodel01.png)
 ___ 
 
 > 10. E finalmente iremos avaliar nosso modelo
@@ -266,7 +266,7 @@ ___
 
 - Conecte a caixa **"Score Model"** com a caixa **"Evaluate Model"**. 
 
-![img33](/img/evaluatemodel01.png)
+![img35](/img/evaluatemodel01.png)
 
 - Em seguida click em **"Submit"**
     
@@ -275,18 +275,18 @@ ___
     - Selecione o nome do seu experimento
     - Click em **"Submit"**
 
-    ![img34](/img/run_experimento02.png)
+    ![img36](/img/run_experimento02.png)
     ___ 
 
 > 11. Verificar o resultado do seu experimento
 
 - Click na caixa **"Evaluate Model"**. Em seguida click em **"Outputs + logs"**, depois click o sinal de um gráfico de barras.
 
-![img35](/img/resultado01.png)
+![img37](/img/resultado01.png)
 
 - Você pode clicar em cada caixa e em seguida click em **"Outputs + logs"** para verificar o resultado após a execução.
 
-![img36](/img/resultado02.png)
+![img38](/img/resultado02.png)
 ___ 
 
 > 12. Vamos melhorar nosso modelo agora
@@ -299,7 +299,7 @@ ___
 
 - Após a etapa anterior irá aparecer uma coluna **"Multiclass Decision Forest"** a sua direita. Deixe os campos preenchidos do padrão conforme imagem abaixo:
 
-![img37](/img/algoritmoml02.png)
+![img39](/img/algoritmoml02.png)
 
 - Em seguida click em **"Submit"**
     
@@ -308,14 +308,14 @@ ___
     - Selecione o nome do seu experimento
     - Click em **"Submit"**
 
-    ![img34](/img/run_experimento02.png)
+    ![img40](/img/run_experimento02.png)
     ___ 
 
 > 12. Verificar o resultado novamente
 
 - Click na caixa **"Evaluate Model"**. Em seguida click em **"Details"**. 
 
-![img35](/img/resultado03.png)
+![img41](/img/resultado03.png)
 
 - Como podemos ver dessa vez atingimos um acurácia de 0.96% o que já está ótimo para nosso experimento
 ___ 
@@ -326,7 +326,7 @@ ___
 - Sem seguida em **"Inference Cluster"**
 - Depois em **"Create"**
 
-![img36](/img/clusterinf01.png)
+![img42](/img/clusterinf01.png)
 
 - No pop-up com o nome de **"New inference cluster"**
     - Digite um nome para o seu cluster
@@ -338,19 +338,19 @@ ___
     - Em "Network Configuration" selecione **"Basic"**
     - Click em **"Create"**
 
-    ![img37](/img/clusterinf02.png)
+    ![img43](/img/clusterinf02.png)
 
     - Assim que terminar volte para seu experimento 
 
-    ![img38](/img/clusterinf02.png)
+    ![img44](/img/clusterinf02.png)
 
 - Click em **"Create inference pipeline"** e em seguida selecione **"Real-time inference pipeline"**
 
-![img39](/img/voltaexp.png)
+![img45](/img/voltaexp.png)
 
 - Click em **"Submit"**
 
-![img40](/img/deploymodel02.png)
+![img46](/img/deploymodel02.png)
 
 <!-- No pop-up com o nome de **"Set up pipeline run"**
     - Selecione **"Select existing"**
@@ -359,45 +359,45 @@ ___
 
 - Após finalizar click em **"Deploy"**
 
-![img41](/img/deploymodel03.png)
+![img47](/img/deploymodel03.png)
 
 - No pop-up com o nome de **"Set up real-time endpoint"**
     - Selecione **"Deploy new real-time endpoint"**
     - No campo **"Real-time endpoint name"** digite um nome para seu endpoint
-    - No campo **"Endpoint description"** digite uma descrição para seu endpoint. Obs: Esse campo é opcional
+    - No campo **"Endpoint description"** digite uma descrição para seu endpoint. Obs.: Esse campo é opcional
     - No campo **"Compute target"** Selecione o cluster que você criou
     - Click em **"Deploy"**
 
-    ![img42](/img/deploymodel04.png)
+    ![img48](/img/deploymodel04.png)
 
-    ![img43](/img/deploymodel05.png)
+    ![img49](/img/deploymodel05.png)
 
 - Após concluir volte ao Designer e click em **"Publish"**
 
 - No pop-up com o nome de **"Set up published pipeline"**
     - Selecione **"Create new"**
     - No campo **"New PipelineEndpoint name"** digite um nome 
-    - No campo **"PipelineEndpoint description"** digite uma descrição. Obs: Esse campo é opcional
+    - No campo **"PipelineEndpoint description"** digite uma descrição. Obs.: Esse campo é opcional
     - Deixe marcada as opções **"Set as default pipeline for this endpoint"** e **"Continue on failure step"**
     - Click em **"Publish"**
 
-    ![img44](/img/deploymodel07.png)
-    ![img45](/img/consume01.png)
+    ![img50](/img/deploymodel07.png)
+    ![img51](/img/consume01.png)
 ___ 
 
 > 14. Agora é hora de consumir nosso modelo
 
 - Click em **"Endpoints"**
 
-![img45](/img/consume02.png)
+![img52](/img/consume02.png)
 
 - Click no seu **"Real-time endpoints"**
 
-![img46](/img/consume03.png)
+![img53](/img/consume03.png)
 
 - Click na aba **"Test"** e em seguida no botão **"Test"**
 
-![img47](/img/consume03.png)
+![img54](/img/consume03.png)
 
 - Pronto testamos nosso experimento com um retorno bem satisfatório.
 ___ 
@@ -410,38 +410,38 @@ ___
 
 - Instale o Power BI seguindo as opções default. Após a instalação abra o mesmo
 
-![img47](/img/pbi01.png) 
+![img55](/img/pbi01.png) 
 ___ 
 
 > 2. Agora vamos importar uma amostra para o Power BI
 
 - Click no icone **"Excel"**
 
-![img48](/img/pbi02.png) 
+![img56](/img/pbi02.png) 
 
 - Selecione **"Sheet1"** e depois click em **"Load"**
 
-![img49](/img/pbi03.png)
+![img57](/img/pbi03.png)
 ___ 
 
 > 3. Vamos habilitar as features em preview do Power BI
 
 - Click em **"File"**, depois click em **"Options and settings"** e em seguida **"Options"**
 
-![img50](/img/pbi04.png)
+![img58](/img/pbi04.png)
 
-![img51](/img/pbi05.png)
+![img59](/img/pbi05.png)
 
 - Click em **"Previews features"**, depois click na caixa **"AI Insights function browser"** 
 
-![img52](/img/pbi06.png)
+![img60](/img/pbi06.png)
 ___ 
 
 > 4. Agora vamos consumir nosso modelo
 
 - Click no icone **"Transform data"**, depois click em **"Transform data"** 
 
-![img53](/img/pbi07.png)
+![img61](/img/pbi07.png)
 
 - Agora no Power Query Editor você conseguirá visualizar os dados da amostra
 
@@ -449,26 +449,44 @@ ___
 
 - Agora você precisa logar com suas credenciais do Azure. Após fazer o login basta clicar em **"Connect"**
 
-![img54](/img/pbi08.png)
+![img62](/img/pbi08.png)
 
 - Agora dentro do Azure Machine Learning Models, você deve selecionar o seu endpoint criado anteriormente
 
-![img55](/img/pbi11.png)
+![img63](/img/pbi11.png)
 
 - Nos campos sem dados você deve colocar um exemplo. Neste caso seria "Sim" no campo **"Saiu_da_empresa"** e no campo **"Num_empresas_trabalhou"** digite um número, no meu caso usei o "4"
 
-![img56](/img/pbi11.png)
+![img64](/img/pbi11.png)
 
-![img57](/img/pbi11-2.png)
+![img65](/img/pbi11-2.png)
 
 - Em seguida é só clicar em **"OK"**
 
 - Irá aparecer uma mensagem sobre Privacidade. Neste momento click em **"Continue"**
 
-![img57](/img/pbi12.png)
+![img66](/img/pbi12.png)
 
 - Em **"Privacy levels"** marque a opção **"Ignore Privacy Levels checks..."** e click em **"Save"**
 
-![img58](/img/pbi13.png)
+![img67](/img/pbi13.png)
 
-- Em **"Privacy levels"** marque a opção **"Ignore Privacy Levels checks..."** e click em **"Save"**
+- Após a importação do modelo uma nova coluna surgirá com o nome do seu Endpoint. Click em no ícone no canto direito dessa nova coluna e irá aparecer um pop-up 
+
+    - Desmarque todas as colunas e deixe somente a **'Scored Labels'** marcada
+    - Desmarque a caixa **'Use original column name as prefix'**
+    - Click em **'OK'**
+
+    ![img68](/img/pbi14.png)
+
+- Pronto agora você já conseguiu rodar seu modelo na sua amostra de dados e ter uma previsibilidade.
+
+![img69](/img/pbi15.png)
+
+## Conclusão ##
+
+- O Azure Machine Learning Designer pode ajudar pessoas com poucos conhecimentos de Machine Learning, mas também pode ajudar Cientista de Dados à ganhar scala e agilidade na criação de seus modelos. 
+
+- E no final podemos ter dados como esse:
+
+![img70](/img/pbi16.png)
