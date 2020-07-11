@@ -473,7 +473,7 @@ ___
 
 - Após a importação do modelo uma nova coluna surgirá com o nome do seu Endpoint. Click em no ícone no canto direito dessa nova coluna e irá aparecer um pop-up 
 
-    - Desmarque todas as colunas e deixe somente a **'Scored Labels'** marcada
+    - Desmarque todas as colunas e deixe somente a **'Scored Labels'** e **'Scored Probabilities_Sim'** marcada
     - Desmarque a caixa **'Use original column name as prefix'**
     - Click em **'OK'**
 
@@ -487,6 +487,6 @@ ___
 
 - O Azure Machine Learning Designer pode ajudar pessoas com poucos conhecimentos de Machine Learning, mas também pode ajudar Cientista de Dados à ganhar scala e agilidade na criação de seus modelos. 
 
-- E no final podemos ter dados como esse:
+- E no final com pouco trabalho no Power BI podemos ter dados como esses
 
 ![img70](/img/pbi16.png)
