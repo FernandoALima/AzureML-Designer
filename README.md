@@ -5,13 +5,13 @@ Este workshop contém instruções sobre como criar seu primeiro experimento uti
 
 > 1. Crie sua conta gratuita no Azure
 
-Basta seguir o passo a passo do link abaixo. Obs.: Utilize um email para criar sua conta Microsoft que nunca tenha utilizado para trial do Azure anteriormente.
+Basta seguir o passo a passo do link abaixo. Obs.: Utilize um e-mail para criar sua conta Microsoft que nunca tenha utilizado para trial do Azure anteriormente.
 Link: https://azure.microsoft.com/pt-br/free/
 ___
    
 > 2. Criar um Resource Group
 
-No portal do Azure Portal click em **"Create a resource"** e então digite **Resource Group** . Click em **"Create"** 
+No portal do Azure Portal click em **"Create a resource"** e então digite **Resource Group**. Click em **"Create"** 
 
 - Subscription: Selecione sua subscrição
 - Resource group: Digite um nome para o sue resource. Ex: MeuML
@@ -23,11 +23,11 @@ ___
 
 > 3. Criar o Machine Learning
 
-No portal do Azure Portal click em **"Create a resource"** e então digite **Machine Learning** . Click em **"Create"** e siga as configurações abaixo: 
+No portal do Azure Portal click em **"Create a resource"** e então digite **Machine Learning**. Click em **"Create"** e siga as configurações abaixo: 
 
 - Subscription: Selecione sua subscrição
 - Resource group: Selecione o resource group criado na etapa anterior
-- Workspace name: Digite um nome para seu workspace. eg: Meu-workspace
+- Workspace name: Digite um nome para seu workspace. Ex.: Meu-workspace
 - Region: Selecione uma região onde será feito o deployment do seu workspace. Recomendo East US 2 por questões de custos.
 - Workspace edition: Aqui você deve selecionar "Enterprise".
 
@@ -58,7 +58,7 @@ ___
 
 5. Agora é hora de fazer o upload dos dados que você irá utilizar no seu experimentos.
 
-- Eu utilizei o Kaggle (https://www.kaggle.com/vjchoudhary7/hr-analytics-case-study) para baixar um dataset para esse experimento. No meu caso eu dei uma "abrasileirada" no dataset e o mesmo está disponível neste repositório do GitHub. Basta fazer o download do arquivo para depois fazer o upload para o seu Storage Account Container conforme imagem abaixo?
+- Eu utilizei o Kaggle (https://www.kaggle.com/vjchoudhary7/hr-analytics-case-study) para baixar um dataset para esse experimento. No meu caso eu dei uma "abrasileirada" no dataset e ele está disponível neste repositório do GitHub. Basta fazer o download do arquivo para depois fazer o upload para o seu Storage Account Container conforme imagem abaixo?
 
 ![img7](/img/upload_data.png)
 
@@ -74,7 +74,7 @@ ___
 
 ![img10](/img/storageaccount_key03.png)
 
-- Você precisa salvar essa chave, pois iremos utilizar ela em uma etapa mais a frente.
+- Você precisa salvar essa chave, pois iremos utilizar ela em uma etapa mais à frente.
 ___
 
 > 6. Volte ao seu resource group e click em Machine Learning
@@ -104,12 +104,12 @@ ___
 
 ![img15](/img/ml_designername.png)
 
-- Agora precisamos selecionar o **"Compute target"** esses servidores que irão precessar todas as etapas do nosso workflow
+- Agora precisamos selecionar o **"Compute target"** esses servidores que irão processar todas as etapas do nosso workflow
 
     - Click em **"Select compute target"**
     - Em seguida click em **"Create new"**
     - Vamos manter a opção pré-definida de cluster
-    - Digite um nome para o seu cluster (são os servidores que irão precessar seu workflow)
+    - Digite um nome para o seu cluster (são os servidores que irão processar seu workflow)
     - Click em **"Save"**
     - Click em **"Save"** novamente
 
@@ -169,7 +169,7 @@ ___
 
         ![img25](/img/importdata01.png)
 
-        - Tenha certeza que as colunas estão configuradas corretas com **'Interger'** para colunas que contêm palavras e **'Integer'** para as colunas que contêm números
+        - Tenha certeza de que as colunas estão configuradas corretamente com **'String'** para colunas que contêm palavras e **'Integer'** para as colunas que contêm números
 
         ![img26](/img/importdata02.png)
         ___    
@@ -227,12 +227,12 @@ ___
 
 - Na coluna **"Modules"** ao lado esquerdo click em **"Model Training"** selecione **"Train Model"** e arraste para o centro da tela no campo vazio.
 
-- Conecte a caixa **"Split Data"** com a caixa **"Train Model"**. Obs.: Na caixa **"Split Data"** existem duas saídas e neste caso você deve utilizar a saída da esquerda, pois ela contém os 70% das linhas do nosso dataset que será utilizado no trainamento.
+- Conecte a caixa **"Split Data"** com a caixa **"Train Model"**. Obs.: Na caixa **"Split Data"** existem duas saídas e neste caso você deve utilizar a saída da esquerda, pois ela contém os 70% das linhas do nosso dataset que será utilizado no treinamento.
 
 - Após a etapa anterior irá aparecer uma coluna **"Train Model"** a sua direita. Preencha os campos conforme detalhado abaixo:
 
     - Click em **"Edit column"**
-    - No campo **"Select a single column"** selecione **"Column names"** e digite **'Saiu_da_empresa'** (Essa e sua coluna target, ou seja você irá treinar seu modelo para responder se uma pessoa vai sair da empresa ou não)
+    - No campo **"Select a single column"** selecione **"Column names"** e digite **'Saiu_da_empresa'** (Essa é sua coluna target, ou seja, você irá treinar seu modelo para responder se um talento vai deixar a empresa)
     - Click em **"Save"**
             
     ![img31](/img/trainmodel01.png)
@@ -242,7 +242,7 @@ ___
 
 > 8. Agora vamos escolher qual algoritmo de Machine Learning iremos utilizar
 
-- Na coluna **"Modules"** ao lado esquerdo click em **"Machine Learning Algorithms"** selecione **"MultiClass Boosted Decision Tree"** e arraste para o centro da tela no campo vazio. Obs.: Como esse é um problema de classificação (sim ou não, groupo a ou grupo b) temos que utilizar algoritmos de Classificação.
+- Na coluna **"Modules"** ao lado esquerdo click em **"Machine Learning Algorithms"** selecione **"MultiClass Boosted Decision Tree"** e arraste para o centro da tela no campo vazio. Obs.: Como esse é um problema de classificação (sim ou não, grupo A ou grupo B) temos que utilizar algoritmos de Classificação.
 
 - Conecte a caixa **"MultiClass Boosted Decision Tree"** com a caixa **"Train Model"**. 
 
@@ -255,7 +255,7 @@ ___
 
 - Na coluna **"Modules"** ao lado esquerdo click em **"Model Scoring & Evaluation"** selecione **"Score Model"** e arraste para o centro da tela no campo vazio.
 
-- Conecte a caixa **"Train Model"** com a caixa **"Score Model"**. Aqui você também precisa conectar a caixa **"Split Data"** com a caixa **"Score Model"**. Obs.: Para fazer a pontuação vamos utilizar o resultado do trainamento do modelo e validar com os 30% das linhas restantes do dataset.
+- Conecte a caixa **"Train Model"** com a caixa **"Score Model"**. Aqui você também precisa conectar a caixa **"Split Data"** com a caixa **"Score Model"**. Obs.: Para fazer a pontuação vamos utilizar o resultado do treinamento do modelo e validar com os 30% das linhas restantes do dataset.
 
 ![img34](/img/scoremodel01.png)
 ___ 
@@ -415,7 +415,7 @@ ___
 
 > 2. Agora vamos importar uma amostra para o Power BI
 
-- Click no icone **"Excel"**
+- Click no ícone **"Excel"**
 
 ![img56](/img/pbi02.png) 
 
@@ -439,7 +439,7 @@ ___
 
 > 4. Agora vamos consumir nosso modelo
 
-- Click no icone **"Transform data"**, depois click em **"Transform data"** 
+- Click no ícone **"Transform data"**, depois click em **"Transform data"** 
 
 ![img61](/img/pbi07.png)
 
