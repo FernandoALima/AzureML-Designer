@@ -414,7 +414,7 @@ ___
 
 - Instale o Power BI seguindo as opções default. Após a instalação abra o mesmo
 
-![img55](/img/pbi01.png) 
+![img55](/img/pbi001.png) 
 ___ 
 
 > 2. Agora vamos importar uma amostra para o Power BI
