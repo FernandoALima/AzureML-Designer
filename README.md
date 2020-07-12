@@ -261,7 +261,7 @@ ___
 
 - Conecte a caixa **"Train Model"** com a caixa **"Score Model"**. Aqui você também precisa conectar a caixa **"Split Data"** com a caixa **"Score Model"**. Obs.: Para fazer a pontuação vamos utilizar o resultado do treinamento do modelo e validar com os 30% das linhas restantes do dataset.
 
-![img34](/img/scoremodel01.png)
+![img34](/img/soremodel01.png)
 ___ 
 
 > 10. E finalmente iremos avaliar nosso modelo
