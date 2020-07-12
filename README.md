@@ -167,11 +167,15 @@ ___
 
         - Após a execução click na caixa **'Import Data'** e em seguida em **'Preview schema'**
 
-        ![img25](/img/importdata001.png)
+        ![img25](/img/importdata01.png)
 
-        - Tenha certeza de que as colunas estão configuradas corretamente com **'String'** para colunas que contêm palavras e **'Integer'** para as colunas que contêm números
+        - Tenha certeza de que as colunas estão configuradas corretamente com **'String'** para colunas que contêm palavras e **'Integer'** para as colunas que contêm números.
 
-        ![img26](/img/importdata002.png)
+        - 'String' para as colunas (Saiu_da_empresa,Viagens,Departamento,Area_de_formacao,Genero,Cargo,Estado_Civel)
+
+        - 'Integer' para as colunas (Idade, Distancia_de_casa, Educacao, ID_funcionario, Nivel_posicao, Renda_mensal, Num_empresas_trabalhou, Aumento_salarial_ultimo_ano_em_%, Nivel_opcao_acoes, Experiencia_anos, Qtd_treinamento_ultimo_ano, Anos_na_empresa, Anos_da_ultima_promocao, Anos_com_mesmo_Gerente)
+
+        ![img26](/img/importdata02.png)
         ___    
 
 > 4. Selecionar as colunas ou features
