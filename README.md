@@ -167,11 +167,11 @@ ___
 
         - Após a execução click na caixa **'Import Data'** e em seguida em **'Preview schema'**
 
-        ![img25](/img/importdata01.png)
+        ![img25](/img/importdata001.png)
 
         - Tenha certeza de que as colunas estão configuradas corretamente com **'String'** para colunas que contêm palavras e **'Integer'** para as colunas que contêm números
 
-        ![img26](/img/importdata02.png)
+        ![img26](/img/importdata002.png)
         ___    
 
 > 4. Selecionar as colunas ou features
