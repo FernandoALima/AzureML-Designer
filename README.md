@@ -37,7 +37,7 @@ ___
 
 > 3. Após a criação volte ao resource group que você criou e click no Storage Account que foi criado conforme imagem abaixo:
 
-![img3](/img/resourcegroup_poscriacao.png)
+![img3](/img/resourcegroup_poscriacao01.png)
 
 Uma vez dentro do Storage Account click em "Container" conforme imagem abaixo:
 
@@ -48,7 +48,7 @@ ___
 
 - Basta clicar em "+ Container", após clicar digite um nome para seu container e click em **"Create"** conforme imagem abaixo:
 
-![img5](/img/createcontainer1.png)  
+![img5](/img/createcontainer01.png)  
 
 - Após o container ser criado click nele:
 
@@ -79,11 +79,11 @@ ___
 
 > 6. Volte ao seu resource group e click em Machine Learning
 
-![img11](/img/marchinelearningclick.png)
+![img11](/img/marchinelearningclick01.png)
 
 Uma vez dentro do recurso click em **"Launch now"**
 
-![img12](/img/ml_launch.png)
+![img12](/img/ml_launch01.png)
 ___
 
 
